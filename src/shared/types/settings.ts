@@ -364,6 +364,7 @@ export const SettingsSchema = GlobalSessionSettingsSchema.extend({
   ]),
   languageInited: z.boolean().optional(),
   fontSize: z.number().catch(14),
+  inputBoxFontSize: z.number().catch(14),
   spellCheck: z.boolean().optional(),
 
   startupPage: z.enum(['home', 'session']).optional(),

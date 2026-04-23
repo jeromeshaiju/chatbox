@@ -163,6 +163,8 @@ const InputBox = forwardRef<InputBoxRef, InputBoxProps>(
     const toolbarIconSize = isSmallScreen ? 22 : 18
     const { height: viewportHeight } = useViewportSize()
     const pasteLongTextAsAFile = useSettingsStore((state) => state.pasteLongTextAsAFile)
+
+    const inputBoxFontSize = useSettingsStore((state) => state.inputBoxFontSize)
     const shortcuts = useSettingsStore((state) => state.shortcuts)
     const widthFull = useUIStore((s) => s.widthFull) || fullWidth
     const saveBlob = useSaveBlob()
@@ -917,7 +919,7 @@ const InputBox = forwardRef<InputBoxRef, InputBoxProps>(
             <Flex align="flex-end" gap={4}>
               <Textarea
                 unstyled={true}
-                styles={{ input: { fontSize: 14 } }}
+                styles={{ input: { fontSize: `${inputBoxFontSize}px` } }}
                 classNames={{
                   root: 'flex-1',
                   wrapper: 'flex-1',
